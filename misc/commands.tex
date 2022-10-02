@@ -1,0 +1,41 @@
+%各个章节标题
+\newcommand{\maintitle}{老天也会宠幸笨小孩}
+\newcommand{\englishmaintitle}{God Loves Fools, too}
+\newcommand{\chptitleOne}{绪论}
+\newcommand{\chptitleTwo}{老天的万分之一也会宠幸到我们这些笨小孩}
+\newcommand{\engchptitleTwo}{One millionth part of God's gift would also come to us stupid kids}
+
+%自定义符号
+\renewcommand{\algorithmicrequire}{\textbf{输入:}}
+\renewcommand{\algorithmicensure}{\textbf{输出:}}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\softmax}{softmax}
+
+
+%独立符号
+\newcommand\indep{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
+
+\renewcommand\arraystretch{1.5}%表格行高
+\AtBeginEnvironment{algorithmic}{\setstretch{1.36}}%算法行距
+
+\crefformat{algorithm}{算法~#2#1#3~}
+\crefformat{table}{表~#2#1#3~}
+\crefformat{figure}{图~#2#1#3~}
+\crefformat{equation}{公式~(#2#1#3)~}
+\crefformat{footnote}{$^{#2#1#3}$}
+\crefformat{chapter}{章节~#2#1#3~}
+\floatname{algorithm}{算法}
+
+\AtBeginDocument{
+  \crefformat{section}{章节~#2#1#3~}
+  \crefformat{subsection}{章节~#2#1#3~}
+  \crefformat{subsubsection}{章节~#2#1#3~}
+}
+
+\definecolor{bitred}{RGB}{161,62,11}
+\definecolor{bitgreen}{RGB}{0,164,68}
+\newcommand{\myredbox}[1]{\tikz[baseline=(MeNode.base)]{\node[rounded corners, fill=bitred!20](MeNode){#1};}}
+\newcommand{\mygreenbox}[1]{\tikz[baseline=(MeNode.base)]{\node[rounded corners, fill=bitgreen!20](MeNode){#1};}}
+
