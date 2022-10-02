@@ -1,6 +1,5 @@
 # BIT-thesis-template
 ### 北京理工大学研究生毕业论文模板 (无bug+功能扩展版)
-### template for graduate thesis of Beijing Institute of Technology (No bug & function extension version)
 
 
 ## 简介
