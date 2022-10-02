@@ -1,0 +1,36 @@
+\ifx\mainpage\undefined
+\def\chpConcl{chpConcl}
+\input{../misc/head}
+\else
+\glsresetall
+\fi
+
+\begin{conclusion} 
+% 结论作为学位论文正文的最后部分单独排写，但不加章号。
+% 结论是对整个论文主要结果的总结。
+% 在结论中应明确指出本研究的创新点，
+% 对其应用前景和社会、经济价值等加以预测和评价，并指出今后进一步在本研究方向进行研究工作的展望与设想。
+% 结论部分的撰写应简明扼要，突出创新性。
+至此，本文``\maintitle''的具体研究内容已经全部介绍完毕。
+以下则是对本文研究内容的总结以及作者对未来研究工作的展望。
+
+\section*{本文研究内容总结}
+\pdfbookmark[1]{本文研究内容总结}{bookmarkconclusion} %手动添加pdf索引
+%
+
+%跨文件引用
+\cref{chp1}介绍了\gls{YCY}，如\cref{chp1:fig:intro}所示。
+
+\cref{chp2}介绍了``\chptitleTwo''。
+以及歌曲《小红象》，如\cref{chp2:tab:little_red_elephant}所示。
+
+\section*{未来研究工作展望}
+\pdfbookmark[1]{未来研究工作展望}{bookmarkfuturework} %手动添加pdf索引
+
+未来将继续研究\gls{YCY}。
+
+\end{conclusion}
+
+\ifx\mainpage\undefined
+\input{../misc/foot}
+\fi
