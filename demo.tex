@@ -1,0 +1,115 @@
+\def\mainpage{mainpage}
+\input{misc/head}
+
+\begin{document}
+%==============改数学字体设置，Latin Modern Math 默认的的确有点细，看个人需要，下面提供一种方法，需要的可以取消注释=========%
+% \usepackage[bold-style=ISO]{unicode-math} %采用unicode-math，可以直接输入Unicode公式，当然传统的输入就行
+% \setmathfont{XITS Math}  %目前unicode-math 支持几种数学字体，具体用法可以查看帮助文档，这里采用类似times字体科学数学字体，可以取消注释对比
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 封面
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 中文封面内容(关注内容而不是表现形式)
+\classification{TP000.0} 
+\UDC{000.0} 
+
+\title{\maintitle}
+\vtitle{\maintitle}
+\author{杨超越}
+\institute{杨超越学院}
+\advisor{杨超越}
+\chairman{杨超越}
+\degree{超越学博士}
+\major{超越科学与技术}
+\school{超越大学}
+\defenddate{2020年6月}
+%\studentnumber{**********}
+
+
+% 英文封面内容(关注内容而不是表现形式)
+\englishtitle{\englishmaintitle}
+\englishauthor{Yang Chaoyue}
+\englishadvisor{Yang Chaoyue}
+\englishchairman{Yang Chaoyue}
+\englishschool{Institute of Chaoyue}
+\englishinstitute{Chaoyue Science and Technology}
+\englishdegree{Doctor of Chaoyue}
+\englishmajor{Chaoyue Science and Technology}
+\englishdate{June, 2020}
+
+% 封面绘制
+\maketitle
+
+% 中文信息
+\makeInfo
+
+% 英文信息
+\makeEnglishInfo
+
+%打印竖排论文题目
+\makeVerticalTitle
+
+% 论文原创性声明和使用授权
+\makeDeclareOriginal
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 前置部分
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frontmatter
+
+% 摘要
+\include{abstract/abstract}
+
+% 加入目录
+\tableofcontents
+
+%加入图、表索引(同时取消图表索引中章之间的垂直间隔)
+\let\origaddvspace\addvspace
+\renewcommand{\addvspace}[1]{}
+\listoffigures
+\listoftables
+% \listof{algorithm}{算法}
+
+% 符号对照表，可选，如不用可注释掉
+\input{chapters/denotation}
+\renewcommand{\addvspace}[1]{\origaddvspace{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 正主体部分
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter
+
+
+%% 各章正文内容
+\include{chapter1/chapter1}
+\include{chapter2/chapter2}
+\include{conclusion/conclusion}
+
+%% 参考文献，五号字，使用 BibTeX，包含参考文献文件.bib
+\bibliography{misc/references}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 后置部分
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% 附录(章节编号重新计算，使用字母进行编号)
+\appendix
+\renewcommand\theequation{\Alph{chapter}--\arabic{equation}}  % 附录中编号形式是"A-1"的样子
+\renewcommand\thefigure{\Alph{chapter}--\arabic{figure}}
+\renewcommand\thetable{\Alph{chapter}--\arabic{table}}
+
+\include{chapters/app1}
+% \include{chapters/app2}
+
+%(其后部分无编号)
+\backmatter
+
+% 发表文章目录
+\include{chapters/pub}
+% 致谢
+\include{chapters/thanks}
+% 作者简介（博士论文需要）
+\include{chapters/resume}
+
+\end{document}
