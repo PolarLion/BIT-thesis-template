@@ -22,11 +22,22 @@ glossary包实现，章（.tex）文件内关键字首次出现的关键字展�
 
 例如：
 ```
+%%%%%%%%%%%%%%%%%%%%%%%%% glossaries.tex 文件 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newglossaryentry{YCY} {
+    name = {YCY},
+    description = {杨超越（Yang Chaoyue，YCY）},
+    first = {杨超越（Yang Chaoyue，YCY）},
+    text = {~YCY~} 
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%% 正文.tex 文件 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  ……
   \gls{YCY}是中国内地女演员……。
   2018年，\gls{YCY}参加……
+  ……
 ```
 
-呈现效果：
+编译后 pdf 呈现效果：
 ```
   杨超越（Yang chaoyue, YCY）是中国内地女演员……。
   2018年，YCY参加……
