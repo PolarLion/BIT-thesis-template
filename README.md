@@ -6,6 +6,7 @@
 ### 1. xelatex 编译，No errors. No warnings.
 
 测试环境 windows texlive 2018/2019/2020/2021/2022
+可能需要安装字体
 
 ### 2. 各章 tex 文件可独立编译
 
